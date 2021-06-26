@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+Registration
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+   {% csrf_token %}
+    {% for form_field in form_fields %}
+   <label for="{{ form_field.name }}">{{ form_field.label }}</label>
+    <input type="{{ form_field.type }}" name="{{ form_field.name }}"><br>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
